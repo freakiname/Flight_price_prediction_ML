@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flight Price Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(120deg, #1e3c72, #2a5298);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card {
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            width: 420px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #1e3c72;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+        }
+        select, input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 6px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            margin-top: 25px;
+            width: 100%;
+            padding: 12px;
+            background-color: #1e3c72;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #16305c;
+        }
+        .result {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #2a5298;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Flight Price Prediction</h2>
+        <form method="post">
+            <label>Airline</label>
+            <select name="airline" required>
+                <option value="0">IndiGo</option>
+                <option value="1">Air India</option>
+                <option value="2">Vistara</option>
+                <option value="3">SpiceJet</option>
+                <option value="4">GO_FIRST</option>
+            </select>
+
+            <label>Source City</label>
+            <select name="source" required>
+                <option value="0">Delhi</option>
+                <option value="1">Mumbai</option>
+                <option value="2">Bangalore</option>
+                <option value="3">Kolkata</option>
+                <option value="4">Hyderabad</option>
+                <option value="5">Chennai</option>
+            </select>
+
+            <label>Destination City</label>
+            <select name="destination" required>
+                <option value="0">Delhi</option>
+                <option value="1">Mumbai</option>
+                <option value="2">Bangalore</option>
+                <option value="3">Kolkata</option>
+                <option value="4">Hyderabad</option>
+                <option value="5">Chennai</option>
+            </select>
+<label>Departure Time</label>
+<select name="departure_time" required>
+    <option value="0">Early Morning</option>
+    <option value="1">Morning</option>
+    <option value="2">Afternoon</option>
+    <option value="3">Evening</option>
+    <option value="4">Night</option>
+</select>
+
+<label>Arrival Time</label>
+<select name="arrival_time" required>
+    <option value="0">Early Morning</option>
+    <option value="1">Morning</option>
+    <option value="2">Afternoon</option>
+    <option value="3">Evening</option>
+    <option value="4">Night</option>
+</select>
+
+
+            <label>Flight Class</label>
+            <select name="flight_class" required>
+                <option value="0">Economy</option>
+                <option value="1">Business</option>
+            </select>
+
+            <label>Stops</label>
+            <select name="stops" required>
+                <option value="0">Non-stop</option>
+                <option value="1">1 Stop</option>
+                <option value="2">2+ Stops</option>
+            </select>
+
+            <label>Duration (minutes)</label>
+            <input type="number" step="1" name="duration" required>
+
+            <label>Days Left to Departure</label>
+            <input type="number" step="1" name="days_left" required>
+
+            <button type="submit">Predict Price</button>
+        </form>
+
+        {% if prediction %}
+        <div class="result">
+            Predicted Price: {{ prediction }} DH
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
