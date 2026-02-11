@@ -86,6 +86,10 @@ python app.py
 
 Open [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
 
+![Flight Price Prediction web interface](Screenshot%202026-02-11%20221422.png)
+
+*Web interface: select airline, route, times, class, and other options, then click "Predict Price" to get the estimated price in DH.*
+
 ### 2. Retrain the Model
 
 1. Open `Train_model.ipynb` in Jupyter.
